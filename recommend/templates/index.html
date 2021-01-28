@@ -5,6 +5,126 @@
     <title>Testing</title>
 </head>
 <body>
-<h1>test main page</h1>
+{% csrf_token %}
+<h1>testing main page</h1>
+<form action="" method="post">
+    <fieldset>
+        <legend>맞춤 추천 서비스를 위한 정보를 입력해주세요.</legend>
+        <div>
+            <label><b>전공</b></label><br>
+            <input type="text" name="major">
+        </div>
+        <br>
+        <div>
+        <table>
+            <th align="left">
+                스킬
+            </th>
+                <tr>
+                    <td>
+                    <label>skill01</label>
+                    <select name="skill01">
+                        <option value="python">Python</option>
+                        <option value="c">C</option>
+                        <option value="java">Java</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>skill02</label>
+                    <select name="skill02">
+                        <option value="mysql">MySQL</option>
+                        <option value="oracle">Oracle</option>
+                        <option value="sqlite">SQLite</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>skill03</label>
+                    <select name="skill03">
+                        <option value="django">Django</option>
+                        <option value="spring">Spring</option>
+                        <option value="react">React</option>
+                    </select>
+                    </td>
+                </tr>
+
+        </table>
+        </div>
+        <br>
+        <div>
+            <table>
+            <th align="left">
+                기업선택 시 우선순위
+            </th>
+                <tr>
+                    <td>
+                    <label>1순위</label>
+                    <select name="rate_no1">
+                        <option value="salary">복지 및 급여</option>
+                        <option value="wlb">업무와 삶의 균형</option>
+                        <option value="culture">사내문화</option>
+                        <option value="possibility">승진 기회 및 가능성</option>
+                        <option value="management">경영진</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>2순위</label>
+                    <select name="rate_no2">
+                        <option value="salary">복지 및 급여</option>
+                        <option value="wlb">업무와 삶의 균형</option>
+                        <option value="culture">사내문화</option>
+                        <option value="possibility">승진 기회 및 가능성</option>
+                        <option value="management">경영진</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>3순위</label>
+                    <select name="rate_no3">
+                        <option value="salary">복지 및 급여</option>
+                        <option value="wlb">업무와 삶의 균형</option>
+                        <option value="culture">사내문화</option>
+                        <option value="possibility">승진 기회 및 가능성</option>
+                        <option value="management">경영진</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>4순위</label>
+                    <select name="rate_no4">
+                        <option value="salary">복지 및 급여</option>
+                        <option value="wlb">업무와 삶의 균형</option>
+                        <option value="culture">사내문화</option>
+                        <option value="possibility">승진 기회 및 가능성</option>
+                        <option value="management">경영진</option>
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>5순위</label>
+                    <select name="rate_no5">
+                        <option value="salary">복지 및 급여</option>
+                        <option value="wlb">업무와 삶의 균형</option>
+                        <option value="culture">사내문화</option>
+                        <option value="possibility">승진 기회 및 가능성</option>
+                        <option value="management">경영진</option>
+                    </select>
+                    </td>
+                </tr>
+
+        </table>
+        </div>
+        <br>
+        <input style="height:50px; width:200px" type="submit">
+    </fieldset>
+</form>
 </body>
 </html>
