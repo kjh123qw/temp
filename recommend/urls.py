@@ -5,5 +5,4 @@ from . import views
 app_name = 'recommend'
 urlpatterns = [
     path('', views.index, name='index'),
-
 ]
