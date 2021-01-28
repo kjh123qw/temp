@@ -1,15 +1,96 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="{% static 'recommend/base.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'recommend/style.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'recommend/favicon.ico' %}"/>
+
     <title>JOB SATELLITE</title>
   </head>
   <body>
-    <header>
-      <div>
-        <div></div>
+    <div class="layer-background" style="display: block;">
+      <div class="layer-container">
+        <div class="layer-category">
+          <div class="category category-lang">언어</div>
+          <div class="category category-web">웹 개발</div>
+          <div class="category category-app">앱 개발</div>
+          <div class="category category-db">DB</div>
+          <div class="category category-ai">AI</div>
+          <div class="category category-big">빅데이터, 서버</div>
+          <div class="category category-coll">협업 툴</div>
+          <div class="category category-etc">기타</div>
+        </div>
+        <div class="layer-item">
+          <div class="item" id="itemPython">Python</div>
+          <div class="item" id="itemJava">Java</div>
+          <div class="item" id="itemC">C</div>
+          <div class="item" id="itemCS">C#</div>
+          <div class="item" id="itemCP">C++</div>
+          <div class="item" id="itemGo">Go</div>
+          <div class="item" id="itemKotlin">Kotlin</div>
+          <div class="item" id="itemPython">Python</div>
+          <div class="item" id="itemJava">Java</div>
+          <div class="item" id="itemC">C</div>
+          <div class="item" id="itemCS">C#</div>
+          <div class="item" id="itemCP">C++</div>
+          <div class="item" id="itemGo">Go</div>
+          <div class="item" id="itemKotlin">Kotlin</div>
+        </div>
+        <div class="layer-item">
+          <div class="item" id="itemPython">Python</div>
+          <div class="item" id="itemJava">Java</div>
+          <div class="item" id="itemC">C</div>
+          <div class="item" id="itemCS">C#</div>
+          <div class="item" id="itemCP">C++</div>
+          <div class="item" id="itemGo">Go</div>
+          <div class="item" id="itemKotlin">Kotlin</div>
+          <div class="item" id="itemPython">Python</div>
+          <div class="item" id="itemJava">Java</div>
+          <div class="item" id="itemC">C</div>
+          <div class="item" id="itemCS">C#</div>
+          <div class="item" id="itemCP">C++</div>
+          <div class="item" id="itemGo">Go</div>
+          <div class="item" id="itemKotlin">Kotlin</div>
+        </div>
+        <div class="layer-confirm">
+          확인
+        </div>
       </div>
+    </div>
+    <header>
+      <div class="header">JOB SATELLITE</div>
     </header>
+      <div class="main-container">
+        <div class="select-container">
+          <div class="nav-container">
+            <div class="skill-btn">스킬 선택</div>
+            <div class="job-btn">직무 선택</div>
+          </div>
+          <div class="section-container">
+            <div class="section-box">
+              <div class="list-box">
+                <div class="skill-noitem">기술을 선택해 주세요.</div>
+                <div class="skill-item">
+                  <div class="skill-text">React.JS</div>
+                  <div class="skill-close-btn">X</div>
+                </div>
+                <div class="skill-item">
+                  <div class="skill-text">Node.JS</div>
+                  <div class="skill-close-btn">X</div>
+                </div>  
+              </div>
+              <div class="add-item-box">
+                <div class="add-item-btn">추가</div>
+              </div>
+            </div>
+            <div class="search-btn">검색</div>
+          </div>
+        </div>
+      </div>
   </body>
 </html>
