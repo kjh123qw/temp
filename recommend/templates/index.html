@@ -6,8 +6,9 @@
 </head>
 <body>
 {% csrf_token %}
-<h1>testing main page</h1>
-<form action="" method="post">
+<h1>Prototype for main page</h1>
+<form  method="post" action="{% url 'recommend:result1'%}">
+    {% csrf_token %}
     <fieldset>
         <legend>맞춤 추천 서비스를 위한 정보를 입력해주세요.</legend>
         <div>
@@ -23,7 +24,7 @@
                 <tr>
                     <td>
                     <label>skill01</label>
-                    <select name="skill01">
+                    <select name="skill01" style="height: 30px">
                         <option value="python">Python</option>
                         <option value="c">C</option>
                         <option value="java">Java</option>
@@ -33,7 +34,7 @@
                 <tr>
                     <td>
                     <label>skill02</label>
-                    <select name="skill02">
+                    <select name="skill02" style="height: 30px">
                         <option value="mysql">MySQL</option>
                         <option value="oracle">Oracle</option>
                         <option value="sqlite">SQLite</option>
@@ -43,7 +44,7 @@
                 <tr>
                     <td>
                     <label>skill03</label>
-                    <select name="skill03">
+                    <select name="skill03" style="height: 30px">
                         <option value="django">Django</option>
                         <option value="spring">Spring</option>
                         <option value="react">React</option>
@@ -62,7 +63,7 @@
                 <tr>
                     <td>
                     <label>1순위</label>
-                    <select name="rate_no1">
+                    <select name="rate_no1" style="height: 30px">
                         <option value="salary">복지 및 급여</option>
                         <option value="wlb">업무와 삶의 균형</option>
                         <option value="culture">사내문화</option>
@@ -74,7 +75,7 @@
                 <tr>
                     <td>
                     <label>2순위</label>
-                    <select name="rate_no2">
+                    <select name="rate_no2" style="height: 30px">
                         <option value="salary">복지 및 급여</option>
                         <option value="wlb">업무와 삶의 균형</option>
                         <option value="culture">사내문화</option>
@@ -86,7 +87,7 @@
                 <tr>
                     <td>
                     <label>3순위</label>
-                    <select name="rate_no3">
+                    <select name="rate_no3" style="height: 30px">
                         <option value="salary">복지 및 급여</option>
                         <option value="wlb">업무와 삶의 균형</option>
                         <option value="culture">사내문화</option>
@@ -98,7 +99,7 @@
                 <tr>
                     <td>
                     <label>4순위</label>
-                    <select name="rate_no4">
+                    <select name="rate_no4" style="height: 30px">
                         <option value="salary">복지 및 급여</option>
                         <option value="wlb">업무와 삶의 균형</option>
                         <option value="culture">사내문화</option>
@@ -110,7 +111,7 @@
                 <tr>
                     <td>
                     <label>5순위</label>
-                    <select name="rate_no5">
+                    <select name="rate_no5" style="height: 30px">
                         <option value="salary">복지 및 급여</option>
                         <option value="wlb">업무와 삶의 균형</option>
                         <option value="culture">사내문화</option>
