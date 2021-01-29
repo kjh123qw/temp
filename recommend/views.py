@@ -1,7 +1,15 @@
 from django.shortcuts import render
 import pandas as pd
-from .models import jobdict
+from .models import *
+#from .models import jobdict
 import os
+import warnings
+from ast import literal_eval
+from sklearn.feature_extraction.text import CountVectorizer
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+warnings.filterwarnings('ignore')
+
 
 def index (request):
     context = {
@@ -118,7 +126,86 @@ def index (request):
 
     return render(request,'index.html',context)
 def fir_result(request):
-    return render(request,'result1.html')
+    df=pd.DataFrame(list(jobdict.objects.all().values()))
+    df=df.dropna(axis=0)
+    context={'df':df}
+    '''
+    df['job'][4]='QA'
+    df['job'][10]='DBA'
+
+    vectorizer=CountVectorizer()  # 피쳐 벡터화
+
+    feature_vector_job=vectorizer.fit_transform(df['skill']) #피쳐 벡터 행렬
+    feature_job=vectorizer.get_feature_names()
+
+
+    person_vec=np.zeros((1,70))
+
+    for skill in person:
+        index=feature_job.index(skill)
+        person_vec[0][index]=1
+    person_vec
+
+    # 코사인 유사도 계산
+
+    skill_sim=cosine_similarity(feature_vector_job,person_vec)
+
+    df['similarity']=''
+    df['similarity']=skill_sim
+    df.sort_values(by='similarity', ascending=False).head(10)
+
+    job_sim_result=df.sort_values(by='similarity', ascending=False).head(3)
+    job_sim_result=job_sim_result['job'].values
+
+
+    # 공고 추천
+
+    # total 공고 파일 업로드
+
+    df_total=pd.read_csv('.\\final_data\\total_skill_data.csv')
+
+    df_total_new=df_total.copy()
+
+    df_total_new=df_total_new.dropna(axis=0,subset=["total_skill_literal"])
+
+
+    vectorizer=CountVectorizer()  # 피쳐 벡터화
+
+    feature_vector_title=vectorizer.fit_transform(df_total_new['total_skill_literal']) #피쳐 벡터 행렬
+    feature_title=vectorizer.get_feature_names()
+
+
+    person_vec_title=np.zeros((1,70))
+
+    for skill in person:
+        index=feature_title.index(skill)
+        person_vec[0][index]=1
+    person_vec
+
+    # 코사인 유사도 계산
+
+    skill_sim=cosine_similarity(feature_vector_title,person_vec)
+
+    df_total_new['similarity']=''
+    df_total_new['similarity']=skill_sim
+    df_total_new_sorting=df_total_new.sort_values(by='similarity', ascending=False)
+    df_total_new_sorting[:]
+
+
+
+    # 나온 공고중에 직무를 만족시키는 공고 5개 뽑기
+
+    job_1=job_sim_result[0]
+    df_final_1=df_total_new_sorting[df_total_new_sorting.job.str.find(job_1)>-1]
+
+    job_2=job_sim_result[1]
+    df_final_2=df_total_new_sorting[df_total_new_sorting.job.str.find(job_2)>-1]
+
+    job_3=job_sim_result[2]
+    df_final_3=df_total_new_sorting[df_total_new_sorting.job.str.find(job_3)>-1]
+    '''
+    return render(request,'result1.html',context)
+
 def wanna_job(request):
     context2 = {'job': [
         {'id': 'web', 'name': '웹개발'}, {'id': 'network', 'name': '네트워크/보안/운영'}, {'id': 'se', 'name': '시스템엔지니어'},
@@ -166,6 +253,6 @@ def create():
         test.objects.create(titleId=test_df['jobId'][i], company=test_df['company'][i], title=test_df['title'][i], job=test_df['job'][i], skill=test_df['skill'][i])
 print(len(test_df))
 #model.objects.all() ㅏ아아앙아아아아아아아아아앙아아아아아아
-print(jobdict.objects.all())
+#print(jobdict.objects.all())'
 #django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured.
 # You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.

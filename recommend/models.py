@@ -34,11 +34,10 @@ class company(models.Model):
     possibility=models.IntegerField(default=0)
     management=models.IntegerField(default=0)
 
+#jobdict db저장 완료
 class jobdict(models.Model):
-    job=models.CharField(max_length=30)
-    python=models.IntegerField(default=0)
-    java=models.IntegerField(default=0)
-    javascript=models.IntegerField(default=0)
+    job=models.CharField(max_length=50,primary_key=True)
+    skill=models.CharField(max_length=100,default='')
 
 #mainpage에 쓰일 스킬 대분류소분류 테이블 필요하면 엑셀에 정리해서 모델링
 #작업하고 사용하기
