@@ -14,9 +14,11 @@
             <div>
             <label style="font-size: 30px">직무</label><br>
             <select name="job" style="height: 30px">
-                        <option value="web_devel">웹개발</option>
-                        <option value="DA">데이터분석</option>
-                        <option value="SW">소프트웨어</option>
+                {%for s in job%}
+
+                 <option value="{{s.id}}">{{s.name}}</option>
+                {%endfor%}
+
             </select>
             </div><br><br>
         <input style="height: 50px;width:200px " type="submit">

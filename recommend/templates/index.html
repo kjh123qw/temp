@@ -23,31 +23,61 @@
             </th>
                 <tr>
                     <td>
-                    <label>skill01</label>
-                    <select name="skill01" style="height: 30px">
-                        <option value="python">Python</option>
-                        <option value="c">C</option>
-                        <option value="java">Java</option>
+                    <label>언어</label>
+                    <select name="Languages" style="height: 30px">
+                        {%for s in 언어.skills %}
+                        <option value="{{s}}">{{s}}</option>
+                        {%endfor%}
                     </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                    <label>skill02</label>
-                    <select name="skill02" style="height: 30px">
-                        <option value="mysql">MySQL</option>
-                        <option value="oracle">Oracle</option>
-                        <option value="sqlite">SQLite</option>
+                    <label>웹개발</label>
+                    <select name="Languages" style="height: 30px">
+                        {%for s in 웹개발.skills %}
+                        <option value="{{s}}">{{s}}</option>
+                        {%endfor%}
                     </select>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                    <label>skill03</label>
-                    <select name="skill03" style="height: 30px">
-                        <option value="django">Django</option>
-                        <option value="spring">Spring</option>
-                        <option value="react">React</option>
+                    <label>앱개발</label>
+                    <select name="Languages" style="height: 30px">
+                        {%for s in 앱개발.skills %}
+                        <option value="{{s}}">{{s}}</option>
+                        {%endfor%}
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>DB</label>
+                    <select name="Languages" style="height: 30px">
+                        {%for s in DB.skills %}
+                        <option value="{{s}}">{{s}}</option>
+                        {%endfor%}
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>AI</label>
+                    <select name="Languages" style="height: 30px">
+                        {%for s in AI.skills %}
+                        <option value="{{s}}">{{s}}</option>
+                        {%endfor%}
+                    </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label>빅데이터_서버</label>
+                    <select name="Languages" style="height: 30px">
+                        {%for s in 빅데이터_서버.skills %}
+                        <option value="{{s}}">{{s}}</option>
+                        {%endfor%}
                     </select>
                     </td>
                 </tr>
