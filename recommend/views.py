@@ -11,14 +11,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 warnings.filterwarnings('ignore')
 
 
-<< << << < HEAD
-# Create your views here.
-
-
-== == == =
->>>>>> > main
-
-
 def index(request):
     context = {
         'skillData': {
@@ -356,24 +348,24 @@ def readCsv(address):
 # address 파라미터 적어줄때  => r'절대주소'
 
 
-test_df = readCsv(r'C:\Users\네리\Desktop\sba_re\4조\job_data_list_final.csv')
-print(test_df.columns)
+# test_df = pd.read_csv('job_data_list_final.csv')
+# print(test_df.columns)
 # col=index,jobId,company,title,job,skill,region,experience,intro
 # task,require,prefer,jobUrl
-test_df = test_df.fillna('')
+# test_df = test_df.fillna('')
 
-print(type(test_df['jobId'][0]))
+# print(type(test_df['jobId'][0]))
 
 # test => titleId,company,title,job,skill
 
 
-def create():
-    for i in range(len(test_df)):
-        test.objects.create(titleId=test_df['jobId'][i], company=test_df['company'][i],
-                            title=test_df['title'][i], job=test_df['job'][i], skill=test_df['skill'][i])
+# def create():
+#     for i in range(len(test_df)):
+#         test.objects.create(titleId=test_df['jobId'][i], company=test_df['company'][i],
+#                             title=test_df['title'][i], job=test_df['job'][i], skill=test_df['skill'][i])
 
 
-print(len(test_df))
+# print(len(test_df))
 # model.objects.all()
 # print(jobdict.objects.all())'
 # django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured.
