@@ -37,16 +37,16 @@ window.onload = () => {
     thirdJobObj.style.backgroundColor = "";
     if (firstPostsObj.style.display !== "none") {
       firstJobObj.getElementsByTagName("div")[1].style.color = "#000";
-      firstJobObj.style.border = "1px solid #777";
-      firstJobObj.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+      firstJobObj.style.border = "1px solid rgb(31, 211, 243)";
+      firstJobObj.style.backgroundColor = "rgb(161, 221, 231)";
     } else if (secondPostsObj.style.display !== "none") {
       secondJobObj.getElementsByTagName("div")[1].style.color = "#000";
-      secondJobObj.style.border = "1px solid #777";
-      secondJobObj.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+      secondJobObj.style.border = "1px solid rgb(31, 211, 243)";
+      secondJobObj.style.backgroundColor = "rgb(161, 221, 231)";
     } else if (thirdPostsObj.style.display !== "none") {
       thirdJobObj.getElementsByTagName("div")[1].style.color = "#000";
-      thirdJobObj.style.border = "1px solid #777";
-      thirdJobObj.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+      thirdJobObj.style.border = "1px solid rgb(31, 211, 243)";
+      thirdJobObj.style.backgroundColor = "rgb(161, 221, 231)";
     }
   };
   checkPostsObj();

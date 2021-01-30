@@ -31,7 +31,6 @@ div.result-jobs-container {
   padding: 2px;
   margin: 2px;
   margin-top: 10px;
-  background-color: #ddd;
 }
 div.result-jobs-title {
   padding: 5px;
@@ -46,7 +45,8 @@ div.result-skill-box {
   position: relative;
   padding: 15px 2px 10px 2px;
   margin: 1px;
-  border: 1px solid #aaa;
+  border: 1px solid rgb(13, 186, 216);
+  background-color: rgb(210, 238, 243);
   cursor: pointer;
 }
 div.result-skill-box {
@@ -54,8 +54,8 @@ div.result-skill-box {
 }
 div.result-job-box:hover,
 div.result-skill-box:hover {
-  border: 1px solid #777;
-  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(31, 211, 243);
+  background-color: rgb(161, 221, 231);
 }
 div.job-rank,
 div.skill-rank {
@@ -84,7 +84,6 @@ hr {
 div.result-posts-container {
   padding: 3px;
   margin-top: 10px;
-  background-color: #ddd;
 }
 div.result-skills-container {
   padding: 3px;
@@ -114,11 +113,11 @@ div.result-post-box {
   grid-template-columns: 1fr 90px;
   padding: 3px;
   margin: 2px 5px 5px;
-  border: 1px solid #bbb;
-  background-color: #ccc;
+  border: 1px solid rgb(13, 186, 216);
+  background-color: rgb(210, 238, 243);
 }
 div.result-post-box:hover {
-  background-color: #bbb;
+  background-color: rgb(228, 247, 250);
 }
 div.post-company {
   color: #555;
