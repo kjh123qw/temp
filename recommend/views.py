@@ -1,4 +1,15 @@
 from django.shortcuts import render
+import pandas as pd
+
+from .models import jobdict, recruit_info
+import os
+import warnings
+from ast import literal_eval
+from sklearn.feature_extraction.text import CountVectorizer
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+warnings.filterwarnings('ignore')
+
 
 # Create your views here.
 
