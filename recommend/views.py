@@ -1,7 +1,7 @@
 from django.shortcuts import render
 import pandas as pd
-from .models import *
-#from .models import jobdict
+
+from .models import jobdict,recruit_info
 import os
 import warnings
 from ast import literal_eval
@@ -125,11 +125,15 @@ def index (request):
     }
 
     return render(request,'index.html',context)
+#@@@@@@@@@@@@@@@@@@@@
 def fir_result(request):
+    context={}
+
     df=pd.DataFrame(list(jobdict.objects.all().values()))
     df=df.dropna(axis=0)
-    context={'df':df}
-    '''
+    #context={'df':df}
+
+
     df['job'][4]='QA'
     df['job'][10]='DBA'
 
@@ -140,7 +144,9 @@ def fir_result(request):
 
 
     person_vec=np.zeros((1,70))
-
+    #person 임의로 줌 input값!!
+    #person=['vue닷js','redux','ruby','닷net']
+    person=['python']
     for skill in person:
         index=feature_job.index(skill)
         person_vec[0][index]=1
@@ -161,8 +167,7 @@ def fir_result(request):
     # 공고 추천
 
     # total 공고 파일 업로드
-
-    df_total=pd.read_csv('.\\final_data\\total_skill_data.csv')
+    df_total= pd.DataFrame(list(recruit_info.objects.all().values()))
 
     df_total_new=df_total.copy()
 
@@ -203,13 +208,13 @@ def fir_result(request):
 
     job_3=job_sim_result[2]
     df_final_3=df_total_new_sorting[df_total_new_sorting.job.str.find(job_3)>-1]
-    '''
+    context={'job1':job_1, 'df':df_final_1, 'job2':job_2, 22:df_final_2, 'job3':job_3, 33:df_final_3}
     return render(request,'result1.html',context)
 
 def wanna_job(request):
     context2 = {'job': [
         {'id': 'web', 'name': '웹개발'}, {'id': 'network', 'name': '네트워크/보안/운영'}, {'id': 'se', 'name': '시스템엔지니어'},
-        {'id': 'qa', 'name': 'Quality Assurance'},
+        {'id':'soft','name':'소프트웨어엔지니어'},{'id': 'qa', 'name': 'Quality Assurance'},
         {'id': 'plan', 'name': '기획'}, {'id': 'da', 'name': '데이터분석'}, {'id': 'app', 'name': '모바일앱개발'},
         {'id': 'pm','name':'프로젝트매니저'}, {'id': 'game', 'name': '게임개발'},
         {'id': 'dba', 'name': 'Database Admin'}, {'id': 'consulting', 'name': '컨설팅'}, {'id': 'he', 'name': '하드웨어엔지니어'},
@@ -230,8 +235,9 @@ def wanna_job(request):
         {'id': 'bmarketing', 'name': '브랜드마케팅'},
         {'id': 'publish', 'name': '출판/편집디자인'}, {'id': 'pd', 'name': '방송연출/PD/감독'}, {'id': 'cs', 'name': '고객지원/CS'},
         {'id': 'culture', 'name': '조직문화'},
-        {'id': 'crm', 'name': 'CRM'}, {'id': 'maintenance', 'name': '유지/수리/정비'}, {'id': 'product', 'name': '제품/산업디자인'}]}
+        {'id': 'crm', 'name': 'CRM'}, {'id': 'maintenance', 'name': '유지/수리/정비'},{'id':'tech','name':'기술영업'}, {'id': 'product', 'name': '제품/산업디자인'}]}
     return render(request,'infojob.html',context2)
+
 def sec_result(requese):
     return render(requese,'result2.html')
 def readCsv(address):
@@ -252,7 +258,7 @@ def create():
     for i in range(len(test_df)):
         test.objects.create(titleId=test_df['jobId'][i], company=test_df['company'][i], title=test_df['title'][i], job=test_df['job'][i], skill=test_df['skill'][i])
 print(len(test_df))
-#model.objects.all() ㅏ아아앙아아아아아아아아아앙아아아아아아
+#model.objects.all()
 #print(jobdict.objects.all())'
 #django.core.exceptions.ImproperlyConfigured: Requested setting INSTALLED_APPS, but settings are not configured.
 # You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
